@@ -9,6 +9,8 @@ export default defineConfig({
   layout: {
     title: 'CoderStation',
   },
+  dva: {},
+  icons: { autoInstall: {} }, // 使用icon
   routes: [
     {
       path: '/',
@@ -35,7 +37,7 @@ export default defineConfig({
           name: '添加管理员',
           component: '@/pages/Admin/addAdmin',
         },
-      ]
+      ],
     },
     {
       name: '用户',
@@ -51,13 +53,13 @@ export default defineConfig({
           path: 'addUser',
           name: '添加用户',
           component: './User/addUser',
-        }
+        },
       ],
     },
     {
       name: '书籍',
       path: '/book',
-      component:'./Book',
+      component: './Book',
       icon: 'ReadOutlined',
     },
     {
@@ -85,6 +87,19 @@ export default defineConfig({
       icon: 'AppstoreOutlined',
     },
   ],
+  proxy: {
+    '/res': {
+      target: 'http://127.0.0.1:7001',
+      changeOrigin: true,
+    },
+    '/api': {
+      target: 'http://127.0.0.1:7001',
+      changeOrigin: true,
+    },
+    '/static': {
+      target: 'http://127.0.0.1:7001',
+      changeOrigin: true,
+    },
+  },
   npmClient: 'pnpm',
 });
-

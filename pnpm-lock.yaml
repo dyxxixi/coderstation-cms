@@ -19,6 +19,12 @@ dependencies:
     version: 5.9.4(react-dom@18.2.0)(react@18.2.0)
 
 devDependencies:
+  '@iconify-json/fa':
+    specifier: 1.1.5
+    version: 1.1.5
+  '@iconify-json/heroicons-outline':
+    specifier: 1.1.7
+    version: 1.1.7
   '@types/react':
     specifier: ^18.2.25
     version: 18.2.25
@@ -2821,9 +2827,20 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: false
 
+  /@iconify-json/fa@1.1.5:
+    resolution: {integrity: sha512-a6iC7FArLDb02hYKrgQWdn5fCCtXxWhw9mkqXbKLvuta4DdZuZdaSbDoA4GuZx1t+0cD7/epF8I9tkrNvyzrrA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/heroicons-outline@1.1.7:
+    resolution: {integrity: sha512-sU65X5hLOn6/gU+Al0G7Jc0Pje/23atx9rE+ejECYb+j2ANgECSeRrdHoPE4WUqdx/F5hqReLcT4ffZBqLUfIg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
-    dev: false
 
   /@iconify/utils@2.1.1:
     resolution: {integrity: sha512-H8xz74JDzDw8f0qLxwIaxFMnFkbXTZNWEufOk3WxaLFHV4h0A2FjIDgNk5LzC0am4jssnjdeJJdRs3UFu3582Q==}
@@ -3373,7 +3390,7 @@ packages:
     resolution: {integrity: sha512-hy8b7Y1J8OGe6LbAjj3xniQrj3v6lsivCcrmf4TzSgPzLkhIeKgc5IZnT7ReIqmEuodjfO8EYAuoFvIrHi/+jQ==}
     deprecated: This is a stub types definition. history provides its own type definitions, so you do not need this installed.
     dependencies:
-      history: 4.10.1
+      history: 5.3.0
     dev: false
 
   /@types/hoist-non-react-statics@3.3.2:
@@ -3453,7 +3470,7 @@ packages:
       '@types/history': 4.7.11
       '@types/react': 18.2.25
       '@types/react-router': 5.1.20
-      redux: 3.7.2
+      redux: 4.2.1
     dev: false
 
   /@types/react-router@5.1.20:
