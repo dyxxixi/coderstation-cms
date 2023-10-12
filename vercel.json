@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/res/:path*",
+      "destination": "https://coderstation-api-dyxxixi.koyeb.app/res/:path*"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://coderstation-api-dyxxixi.koyeb.app/api/:path*"
+    },
+    {
+      "source": "/static/:path*",
+      "destination": "https://coderstation-api-dyxxixi.koyeb.app/static/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -88,16 +88,17 @@ export default defineConfig({
     },
   ],
   proxy: {
+    // 本地：http://127.0.0.1:7001    外部：https://coderstation-api-dyxxixi.koyeb.app
     '/res': {
-      target: 'http://127.0.0.1:7001',
+      target: 'https://coderstation-api-dyxxixi.koyeb.app',
       changeOrigin: true,
     },
     '/api': {
-      target: 'http://127.0.0.1:7001',
+      target: 'https://coderstation-api-dyxxixi.koyeb.app',
       changeOrigin: true,
     },
     '/static': {
-      target: 'http://127.0.0.1:7001',
+      target: 'https://coderstation-api-dyxxixi.koyeb.app',
       changeOrigin: true,
     },
   },
