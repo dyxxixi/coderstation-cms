@@ -8,6 +8,7 @@ import { Icon } from 'umi';
  */
 function AdminForm({ type, handleSubmit, adminInfo, setAdminInfo }) {
   let formRef = useRef();
+  // 数据回填
   useEffect(() => {
     if (formRef.current) {
       formRef.current.setFieldsValue(adminInfo);

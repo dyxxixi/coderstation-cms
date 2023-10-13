@@ -1,11 +1,50 @@
-import React from 'react';
+import { PageContainer } from '@ant-design/pro-components';
+import { message } from 'antd/lib';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import UserForm from './components/userForm';
 
-function addUser(props) {
+// 请求方法
+import UserController from '@/services/user';
+
+function AddUser() {
+  const navigate = useNavigate();
+
+  const [newUserInfo, setNewUserInfo] = useState({
+    loginId: '',
+    loginPwd: '',
+    avatar: '',
+    nickname: '',
+    mail: '',
+    qq: '',
+    wechat: '',
+    intro: '',
+  });
+
+  /**
+   * 新增用户
+   */
+  function handleSubmit() {
+    // 因为没有使用状态机，所以直接调用控制器方法，进行新增
+    UserController.addUser(newUserInfo);
+
+    // 跳转回首页
+    navigate('/user/userList');
+    message.success('添加用户成功');
+  }
+
   return (
-    <div>
-      添加用户
-    </div>
+    <PageContainer>
+      <div className="container" style={{ width: 800 }}>
+        <UserForm
+          type="add"
+          handleSubmit={handleSubmit}
+          userInfo={newUserInfo}
+          setUserInfo={setNewUserInfo}
+        />
+      </div>
+    </PageContainer>
   );
 }
 
-export default addUser;
+export default AddUser;

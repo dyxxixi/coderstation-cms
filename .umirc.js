@@ -54,6 +54,12 @@ export default defineConfig({
           name: '添加用户',
           component: './User/addUser',
         },
+        {
+          path: 'editUser/:id',
+          name: '编辑用户',
+          component: './User/editUser',
+          hideInMenu: true,
+        },
       ],
     },
     {
@@ -90,15 +96,15 @@ export default defineConfig({
   proxy: {
     // 本地：http://127.0.0.1:7001    外部：https://coderstation-api-dyxxixi.koyeb.app
     '/res': {
-      target: 'https://coderstation-api-dyxxixi.koyeb.app',
+      target: 'http://127.0.0.1:7001',
       changeOrigin: true,
     },
     '/api': {
-      target: 'https://coderstation-api-dyxxixi.koyeb.app',
+      target: 'http://127.0.0.1:7001',
       changeOrigin: true,
     },
     '/static': {
-      target: 'https://coderstation-api-dyxxixi.koyeb.app',
+      target: 'http://127.0.0.1:7001',
       changeOrigin: true,
     },
   },
