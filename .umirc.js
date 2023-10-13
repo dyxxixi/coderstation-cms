@@ -65,8 +65,25 @@ export default defineConfig({
     {
       name: '书籍',
       path: '/book',
-      component: './Book',
       icon: 'ReadOutlined',
+      routes: [
+        {
+          path: 'bookList',
+          name: '书籍列表',
+          component: './Book',
+        },
+        {
+          path: 'addBook',
+          name: '添加书籍',
+          component: './Book/addBook',
+        },
+        {
+          path: 'editBook/:id',
+          name: '编辑书籍信息',
+          component: './Book/editBook',
+          hideInMenu: true,
+        },
+      ],
     },
     {
       name: '面试题',
