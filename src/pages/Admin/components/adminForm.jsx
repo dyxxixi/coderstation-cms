@@ -1,6 +1,6 @@
 import { adminIsExistApi } from '@/services/admin';
 import { Button, Form, Image, Input, Radio, Upload } from 'antd';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Icon } from 'umi';
 
 /**
@@ -8,9 +8,11 @@ import { Icon } from 'umi';
  */
 function AdminForm({ type, handleSubmit, adminInfo, setAdminInfo }) {
   let formRef = useRef();
-  if (formRef.current) {
-    formRef.current.setFieldsValue(adminInfo);
-  }
+  useEffect(() => {
+    if (formRef.current) {
+      formRef.current.setFieldsValue(adminInfo);
+    }
+  }, [adminInfo]);
 
   // 头像容器
   let avatarPreview = null;
