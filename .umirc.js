@@ -8,6 +8,8 @@ export default defineConfig({
   request: {},
   layout: {
     title: 'CoderStation',
+    pure: true,
+    loading: true,
   },
   dva: {},
   icons: { autoInstall: {} }, // 使用icon
@@ -137,6 +139,11 @@ export default defineConfig({
       path: '/type',
       component: './Type',
       icon: 'AppstoreOutlined',
+    },
+    {
+      path: '/login',
+      component: './Login',
+      menuRender: false,
     },
   ],
   proxy: {

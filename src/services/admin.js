@@ -55,3 +55,32 @@ export function adminIsExistApi(loginId) {
     method: 'GET',
   });
 }
+
+/**
+ * 获取验证码
+ */
+
+export function getCaptchaApi() {
+  return request('/res/captcha', {
+    method: 'GET',
+  });
+}
+
+/**
+ * 管理员登录
+ */
+export function loginApi(loginInfo) {
+  return request('/api/admin/login', {
+    method: 'POST',
+    data: loginInfo,
+  });
+}
+
+/**
+ * 恢复登录状态
+ */
+export function getInfoApi() {
+  return request('/api/admin/whoami', {
+    method: 'GET',
+  });
+}
