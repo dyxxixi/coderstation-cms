@@ -45,6 +45,7 @@ function Issue() {
       title: '问答标题',
       dataIndex: 'issueTitle',
       key: 'issueTitle',
+      align: 'center',
       render: (_, row) => {
         // 将问答标题进行简化
         let brief = null;
@@ -60,6 +61,7 @@ function Issue() {
       title: '问答描述',
       dataIndex: 'issueContent',
       key: 'issueContent',
+      align: 'center',
       search: false,
       render: (_, row) => {
         // 将问答描述的文字进行简化

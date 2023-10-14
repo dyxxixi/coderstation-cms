@@ -44,6 +44,7 @@ function Interview() {
       title: '题目名称',
       dataIndex: 'interviewTitle',
       key: 'interviewTitle',
+      align: 'center',
       render: (_, row) => {
         // 将书籍简介的文字进行简化
         let brief = null;

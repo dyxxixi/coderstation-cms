@@ -121,7 +121,7 @@ function InterviewForm({
           {type === 'add' ? '确认新增' : '修改'}
         </Button>
 
-        <Button type="link" htmlType="submit" className="resetBtn">
+        <Button type="default" className="resetBtn">
           重置
         </Button>
       </Form.Item>
