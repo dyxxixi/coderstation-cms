@@ -99,7 +99,7 @@ function Interview() {
       fixed: 'right',
       align: 'center',
       render: (_, row, index, action) => {
-        return [
+        return (
           <div key={row._id}>
             <Button
               type="link"
@@ -125,8 +125,8 @@ function Interview() {
                 删除
               </Button>
             </Popconfirm>
-          </div>,
-        ];
+          </div>
+        );
       },
     },
   ];
