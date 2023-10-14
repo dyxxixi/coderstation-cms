@@ -30,10 +30,9 @@ function Type() {
       width: 200,
       key: 'option',
       valueType: 'option',
-      fixed: 'right',
       align: 'center',
       render: (_, row, index, action) => {
-        return [
+        return (
           <div key={row._id}>
             <Popconfirm
               title="你确定要删除？"
@@ -45,8 +44,8 @@ function Type() {
                 删除
               </Button>
             </Popconfirm>
-          </div>,
-        ];
+          </div>
+        );
       },
     },
   ];
