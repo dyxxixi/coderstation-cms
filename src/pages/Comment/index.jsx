@@ -76,12 +76,15 @@ function Comment() {
       key: 'commentContent',
       align: 'center',
       render: (_, row) => {
-        // 将问答标题进行简化
+        // 剔除掉标签
+        const reg = /<[^<>]+>/g;
+        const newContent = row?.commentContent.replace(reg, '');
+        // 将评论内容进行简化
         let brief = null;
-        if (row.commentContent.length > 30) {
-          brief = row.commentContent.slice(0, 30) + '...';
+        if (newContent.length > 30) {
+          brief = newContent.slice(0, 30) + '...';
         } else {
-          brief = row.commentContent;
+          brief = newContent;
         }
         return [brief];
       },
