@@ -1,7 +1,7 @@
 import UserController from '@/services/user';
 import { formatDate } from '@/utils/tool';
 import { PageContainer, ProTable } from '@ant-design/pro-components';
-import { useNavigate } from '@umijs/max';
+import { Access, useAccess, useNavigate } from '@umijs/max';
 import { Button, Image, Modal, Popconfirm, Switch, Tag } from 'antd';
 import { message } from 'antd/lib';
 import { useRef, useState } from 'react';
@@ -15,6 +15,7 @@ function User(props) {
   const [userInfo, setUserInfo] = useState(null);
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const access = useAccess();
 
   const columns = [
     {
@@ -82,16 +83,18 @@ function User(props) {
             >
               编辑
             </Button>
-            <Popconfirm
-              title="你确定要删除？"
-              onConfirm={() => handleDelete(row)}
-              okText="删除"
-              cancelText="取消"
-            >
-              <Button type="link" size="small">
-                删除
-              </Button>
-            </Popconfirm>
+            <Access accessible={access.SuperAdmin}>
+              <Popconfirm
+                title="你确定要删除？"
+                onConfirm={() => handleDelete(row)}
+                okText="删除"
+                cancelText="取消"
+              >
+                <Button type="link" size="small">
+                  删除
+                </Button>
+              </Popconfirm>
+            </Access>
           </div>
         );
       },

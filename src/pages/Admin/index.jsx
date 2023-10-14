@@ -1,5 +1,5 @@
 import { PageContainer, ProTable } from '@ant-design/pro-components';
-import { useDispatch, useSelector } from '@umijs/max';
+import { useDispatch, useModel, useSelector } from '@umijs/max';
 import { Button, Modal, Popconfirm, Switch, Tag } from 'antd';
 import { message } from 'antd/lib';
 import { useEffect, useState } from 'react';
@@ -12,6 +12,8 @@ function Admin() {
   // 存储当前要修改的管理员信息
   const [adminInfo, setAdminInfo] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // 获取全局初始化数据
+  const { initialState } = useModel('@@initialState');
 
   useEffect(() => {
     if (!adminList.length) {
@@ -71,14 +73,19 @@ function Admin() {
       key: 'enabled',
       align: 'center',
       render: (_, row) => {
-        return (
-          <Switch
-            key={row._id}
-            defaultChecked={row.enabled ? true : false}
-            size="small"
-            onChange={(value) => switchChange(row, value)}
-          />
-        );
+        if (row?._id === initialState.adminInfo._id) {
+          // 说明是当前登录的账号
+          return <Tag color="gray">--</Tag>;
+        } else {
+          return (
+            <Switch
+              key={row._id}
+              defaultChecked={row.enabled ? true : false}
+              size="small"
+              onChange={(value) => switchChange(row, value)}
+            />
+          );
+        }
       },
     },
     {
